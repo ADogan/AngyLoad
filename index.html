@@ -1,13 +1,84 @@
-<html ng-app>
-<head>
-  <script type="application/javascript" src="lib/angular/angular.min.js"></script>
-  <link href="node_modules/bootstrap/bootstrap.min.css" type="text/css" />
-  
-  <script type="application/javascript" src="lib/bootstrap/bootstrap.min.js"></script>
+<html ng-app="listApp">
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Off Canvas Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet"  href="lib/bootstrap/bootstrap.min.css" type="text/css" />
+
+    <!-- Custom styles for this template -->
+    <link href="lib/offcanvas/offcanvas.css" rel="stylesheet">
   </head>
-<body>
+
+  <body ng-controller="MainController as main">
+    <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+      <div class="container">
+        <a class="navbar-brand" href="#">Project name</a>
+        <ul class="nav navbar-nav">
+          <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div><!-- /.container -->
+    </nav><!-- /.navbar -->
+
+    <div class="container">
+
+      <div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-xs-12 col-sm-9">
+          <p class="float-xs-right hidden-sm-up">
+            <button type="button" class="btn btn-primary btn-sm" data-toggle="offcanvas">Toggle nav</button>
+          </p>
+          <div class="jumbotron">
+            <h1>Hello, world {{10 + 10}} {{itemname}} !</h1>
+            <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
+          </div>
+          <div class="row">
+            <div class="col-xs-6 col-lg-4" ng-repeat="item in items" ng-click="alertButton(item);">
+              <h2>{{item.name}}</h2>
+              <p>{{item.description}}</p>
+              <a ng-href={{item.link}}>{{item.link}}</a>
+              <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            </div><!--/span-->
+            <div class="col-xs-6 col-lg-4">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            </div><!--/span-->
+          </div><!--/row-->
+        </div><!--/span-->
+
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>&copy; Company 2</p>
+      </footer>
+
+    </div><!--/.container-->
+    
+  <script type="application/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+  <script type="application/javascript" src="lib/tether/dist/js/tether.min.js"></script>
+  <script type="application/javascript" src="lib/bootstrap/bootstrap.min.js"></script>
   
-{{10+20}}
-  
-  
-  </body></html>
+    <script type="application/javascript" src="lib/angular/angular.min.js"></script>
+    <script type="application/javascript" src="lib/angular/angular-route.min.js"></script>
+    
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="lib/bootstrap/js/dist/ie10-viewport-bug-workaround.js"></script>
+    <script src="lib/offcanvas/offcanvas.js"></script>
+    <script src="app/app.js"></script>
+    
+  </body>
+</html>

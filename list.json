@@ -1,0 +1,12 @@
+{
+  item: {
+  name: 'something1',
+  title: 'somethingmore'
+},
+  item2: {
+    name: 'somemore2'
+  },
+  item3: {
+    name: 'somemore3'
+  }
+}
